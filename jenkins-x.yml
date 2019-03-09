@@ -1,4 +1,3 @@
-pipelineConfig:
-  env:
-    - name: FRUIT
-      value: BANANA
+buildPack: maven
+builds:
+  - kind: pullrequest
