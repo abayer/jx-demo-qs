@@ -1,4 +1,0 @@
-pipelineConfig:
-  env:
-    - name: FRUIT
-      value: BANANA
