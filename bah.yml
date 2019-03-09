@@ -1,0 +1,38 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineRun
+metadata:
+  creationTimestamp: 2019-02-27T20:20:20Z
+  generation: 1
+  labels:
+    branch: master
+    build-number: "7"
+    owner: abayer
+    repo: jx-demo-qs
+    tekton.dev/pipeline: abayer-jx-demo-qs-master
+  name: abayer-jx-demo-qs-master-7
+  namespace: jx
+  ownerReferences:
+  - apiVersion: tekton.dev/v1alpha1
+    kind: Pipeline
+    name: abayer-jx-demo-qs-master
+    uid: fb60004d-3acc-11e9-b317-42010a8a0165
+spec:
+  Status: ""
+  params:
+  - name: version
+    value: 0.0.0-SNAPSHOT-master-7
+  - name: build_id
+    value: "4"
+  pipelineRef:
+    name: abayer-jx-demo-qs-master
+  resources:
+  - name: abayer-jx-demo-qs-master
+    resourceRef:
+      apiVersion: tekton.dev/v1alpha1
+      name: abayer-jx-demo-qs-master
+  serviceAccount: tekton-bot
+  trigger:
+    type: manual
+status:
+  conditions: null
+  

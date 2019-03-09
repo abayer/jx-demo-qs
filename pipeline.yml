@@ -1,0 +1,34 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  creationTimestamp: null
+  name: abayer-jx-demo-qs-argh
+spec:
+  params:
+  - default: 0.0.0-SNAPSHOT-argh-1
+    description: the version number for this pipeline which is used as a tag on docker
+      images and helm charts
+    name: version
+  - default: "1"
+    description: the PipelineRun build number
+    name: build_id
+  resources:
+  - name: abayer-jx-demo-qs-argh
+    type: git
+  tasks:
+  - name: from-build-pack
+    params:
+    - name: version
+      value: ${params.version}
+    - name: build_id
+      value: ${params.build_id}
+    resources:
+      inputs:
+      - name: source
+        resource: abayer-jx-demo-qs-argh
+      outputs: null
+    taskRef:
+      apiVersion: tekton.dev/v1alpha1
+      kind: Task
+      name: abayer-jx-demo-qs-argh
+status: {}
