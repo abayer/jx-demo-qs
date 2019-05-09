@@ -33,7 +33,7 @@ pipelineConfig:
         steps:
           - sh: echo goodbye
           - sh: echo wait why am i here
-      - name: build-skaffold-version
+      - name: skaffold-version
         steps:
           - sh: echo this is a replacement
           - sh: echo so is this one
